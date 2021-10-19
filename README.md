@@ -1,24 +1,18 @@
 # Deploy Django in Production
 
-Boilerplate code to deploy a Django project using Docker Compose in a production environment.
+FTA project implementing containerization of Django Web Framework into Docker to be placed into Azure Container Services and Kubernetes.
 
 In production, Django uses a WSGI server such as Gunicorn and a web server such as Nginx.
 
 # Usage
 
-Run services in the background:
-`docker-compose up -d`
-
 Run services in the foreground:
 `docker-compose up --build`
 
-Inspect volume:
-`docker volume ls`
-and
-`docker volume inspect <volume name>`
+# Deploy to Azure Container Services
 
-View networks:
-`docker network ls`
+Placeholder
 
-Bring services down:
-`docker-compose down`
+# Deploy to Azure Kubernetes Services
+
+Placeholder
