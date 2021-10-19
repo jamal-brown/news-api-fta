@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!--- use items for key value pairs when looping through since each will be unique 
+{% for key,value in price.DISPLAY.items %}
+    <strong>Name: </strong> {{key}} <br/>
+    <strong>Price: </strong> {{value.USD.PRICE}} <br/>   
+    <strong>Market Cap: </strong> {{value.USD.MKTCAP}} <br/> 
+    <hr>
+
+{% endfor %} -->
+
+<br></br>
+
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Market Cap</th>
+        </tr>
+        </thead>
+    {% for key,value in price.DISPLAY.items %}
+        <tbody>
+        <tr>
+            <td>{{key}}</td>
+            <td>{{value.USD.PRICE}}</td>
+            <td>@{{value.USD.MKTCAP}}</td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<br/>
+<br/>
+
+
+
+<div class="container">
+    <div class="row">
+        {% for x in api.Data %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{ x.imageurl }}" class="card-img-top" alt="{{ x.source }}">
+                <div class="card-body">
+                <h5 class="card-title">{{ x.title }}</h5>
+                <p class="card-text">{{ x.body }}.</p>
+                <a href="{{ x.url }}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
